@@ -1,2 +1,2 @@
-# Jacob-Hudson.com
-Detailed personal website Hosted on Goolge Firebase
+# Jacob-Hudson
+Detailed personal website Hosted on Google Firebase
