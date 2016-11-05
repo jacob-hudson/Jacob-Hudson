@@ -1,13 +1,12 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto Sans|Roboto Sans');
+/*@import url('https://fonts.googleapis.com/css?family=Roboto Sans|Roboto Sans');*/
 #avatar {
   height: 180px;
   border-radius: 100%;
   border: 0px solid white;
   margin-bottom: 40px;
 }
-/*! normalize.css v3.0.2 | MIT License | git.io/normalize */
 html {
-  font-family: sans-serif;
+  font-family: "Noto Sans",  sans-serif;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
 }
