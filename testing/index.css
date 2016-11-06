@@ -4,6 +4,24 @@
   border: 0px solid white;
   margin-bottom: 40px;
 }
+#navbar {
+  background-color: #090909;
+}
+#home {
+  background-color: #334960;
+}
+#about {
+  background-color: #e6655e;
+}
+#skills {
+  background-color: #32ac97;
+}
+#interests {
+  background-color: #7f4c76;
+}
+#contact {
+  background-color: #3f9fc9;
+}
 .social_buttons {
     padding-top: 50px;
     padding-bottom: 40px;
