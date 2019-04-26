@@ -1,2 +1,3 @@
-infra/terraform/terraform.tfstate*
 .vscode/
+infra/terraform/terraform.tfstate*
+infra/terraform/.terraform/
