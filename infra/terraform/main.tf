@@ -1,7 +1,7 @@
 // Configure the Google Cloud provider
 provider "google" {
  credentials = "${file("~/.gcp/creds.json")}"
- project     = "jacob-hudson"
+ project     = "jacob-hudson-website"
  region      = "us-central1"
 }
 
@@ -15,7 +15,7 @@ resource "random_id" "instance_id" {
 resource "google_compute_instance" "default" {
  name         = "jacob-hudson-${random_id.instance_id.hex}"
  machine_type = "f1-micro"
- zone         = "us-central1-a" 
+ zone         = "us-central1-a"
 
  boot_disk {
    initialize_params {
