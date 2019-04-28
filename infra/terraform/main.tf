@@ -23,6 +23,10 @@ resource "google_compute_instance" "default" {
    }
  }
 
+ metadata {
+   sshKeys = "jacob_alan_hudson:${file("~/.ssh/id_rsa.pub")}"
+ }
+
 // Make sure flask is installed on all new instances for later steps
  metadata_startup_script = "sudo apt-get update; sudo apt-get install -yq build-essential python-pip rsync; pip install flask"
 
@@ -33,4 +37,9 @@ resource "google_compute_instance" "default" {
      // Include this section to give the VM an external ip address
    }
  }
+}
+
+// A variable for extracting the external ip of the instance
+output "ip" {
+ value = "${google_compute_instance.default.network_interface.0.access_config.0.nat_ip}"
 }
