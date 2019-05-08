@@ -1,7 +1,7 @@
 // Configure the Google Cloud provider
 provider "google" {
  credentials = "${file("~/.gcp/creds.json")}"
- project     = "jacob-hudson-website"
+ project     = "${var.project_name}"
  region      = "us-central1"
 }
 
@@ -24,7 +24,7 @@ resource "google_compute_instance" "default" {
  }
 
  metadata {
-   sshKeys = "jacob_alan_hudson:${file("~/.ssh/id_rsa.pub")}"
+   ssh-keys = "${var.ssh_user}:${file("${var.public_key_path}")}"
  }
 
 // Make sure flask is installed on all new instances for later steps
@@ -37,9 +37,17 @@ resource "google_compute_instance" "default" {
      // Include this section to give the VM an external ip address
    }
  }
-}
+  provisioner "remote-exec" {
+    inline = ["echo 'Hello World'"]
 
-// A variable for extracting the external ip of the instance
-output "ip" {
- value = "${google_compute_instance.default.network_interface.0.access_config.0.nat_ip}"
+    connection {
+      type        = "ssh"
+      user        = "${var.ssh_user}"
+      private_key = "${file("${var.private_key_path}")}"
+    }
+  }
+
+  provisioner "local-exec" {
+    command = "ansible-playbook -i '${google_compute_instance.default.network_interface.0.access_config.0.nat_ip},' --private-key ${var.private_key_path} ../ansible/task/docker.yml"
+  }
 }
