@@ -1,4 +1,4 @@
 ---
-- hosts: http
+- hosts: all
   roles:
   - { role: docker }
