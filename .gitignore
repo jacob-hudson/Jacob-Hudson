@@ -2,3 +2,4 @@
 infra/terraform/terraform.tfstate*
 infra/terraform/.terraform/
 infra/terraform/tfplan
+infra/ansible/*.retry
