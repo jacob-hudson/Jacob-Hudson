@@ -11,6 +11,12 @@ resource "random_id" "instance_id" {
  byte_length = 8
 }
 
+// remote backend on Google Cloud Storage
+terraform {
+  backend "gcs" {
+  }
+}
+
 // A single Google Cloud Engine instance
 resource "google_compute_instance" "default" {
  name         = "jacob-hudson-${random_id.instance_id.hex}"
