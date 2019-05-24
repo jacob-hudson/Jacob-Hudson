@@ -54,6 +54,6 @@ resource "google_compute_instance" "default" {
   }
 
   provisioner "local-exec" {
-    command = "ANSIBLE_CONFIG=../ansible/ansible.cfg ansible-playbook -i '${google_compute_instance.default.network_interface.0.access_config.0.nat_ip},' --private-key ${var.private_key_path} ../ansible/task/docker.yml"
+    command = "ANSIBLE_CONFIG=../ansible/ansible.cfg ansible-playbook -i '${google_compute_instance.default.network_interface.0.access_config.0.nat_ip},' --private-key ${var.private_key_path} ../ansible/task/docker.yml -u jacob_alan_hudson"
   }
 }
