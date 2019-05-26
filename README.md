@@ -10,3 +10,6 @@ Hosting is through Google Firebase for the following reasons:
 - It is free and has no advertisements
 - It alowes me to leverage Google's robust CDN
 - It also gives me exposure into Firebase features
+
+## TODO
+- Include Language progress tracker

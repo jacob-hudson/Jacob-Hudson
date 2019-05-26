@@ -1,3 +1,6 @@
-.firebaserc
-database.rules.json
-firebase.json
+.vscode/
+infra/terraform/terraform.tfstate*
+infra/terraform/.terraform/
+infra/terraform/tfplan
+infra/ansible/task/*.retry
+*/.DS_Store
