@@ -25,7 +25,7 @@ resource "google_compute_instance" "default" {
 
  boot_disk {
    initialize_params {
-     image = "ubuntu-os-cloud/ubuntu-1404-trusty-v20190424"
+     image = "ubuntu-os-cloud/ubuntu-1804-bionic-v20190514"
    }
  }
 
