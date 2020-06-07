@@ -21,4 +21,14 @@ spec:
       - image: nginx
         name: nginx
         resources: {}
+        securityContext:
+          privileged: true 
+        volumeMounts:
+        - mountPath: /hostData
+          name: hostpath-privileged
+      securityContext: {}
+      volumes:
+        - name: hostpath-privileged
+          persistentVolumeClaim:
+            claimName: web-server-pvc
 status: {}

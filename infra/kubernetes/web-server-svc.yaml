@@ -39,10 +39,8 @@ spec:
   clusterIP: 10.106.107.158
   externalTrafficPolicy: Cluster
   ports:
-  - nodePort: 32385
-    port: 800
+  - port: 80
     protocol: TCP
-    targetPort: 80
   selector:
     app: web-server
   sessionAffinity: None
