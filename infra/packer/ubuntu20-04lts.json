@@ -1,0 +1,19 @@
+{
+    "variables": {
+      "project_id": "var"
+    },
+    "builders": [
+      {
+        "type": "googlecompute",
+        "account_file": "/Users/jacob/.gcp/creds.json",
+        "project_id": "jacob-hudson-website",
+        "source_image": "ubuntu-minimal-2004-focal-v20200729",
+        "zone": "us-central1-a",
+        "image_description": "Ubuntu 20.04 LTS Test",
+        "image_name": "ubuntu-test",
+        "disk_size": 10,
+        "ssh_username": "jacob_alan_hudson"
+      }
+    ]
+  }
+  
